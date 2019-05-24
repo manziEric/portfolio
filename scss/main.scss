@@ -1,0 +1,80 @@
+@import 'config';
+// * selecting every thing in css
+*{
+    box-sizing: border-box;
+}
+
+body{
+    @include background;
+    background: $primary-color;
+    color: #fff;
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5;
+}
+
+// Headings
+
+h1, h2, h3{
+    margin: 0;
+    font-weight: 400;
+    // is gelijk aan 1: dit is nested bij sass
+    &.lg-heading{
+        // 1rem is normaal standaard bij html, 1rem == 16px
+    font-size: 6rem;
+    }
+    &.sm-heading{
+        margin-bottom: 2rem;
+        padding: 0.2rem 1rem;
+        background: rgba(lighten($primary-color,5), 0.5);
+    }
+}
+// h1.lg-heading{
+// 1: is gelijk aan nested. dit is bij normal css
+// }
+
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+header{
+    // maakt de 3 menu streepjes 
+    // vast zo dat we scrollen en deze me gaan naar beneden
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+}
+
+.text-secondary{
+    color: $secondary-color;
+}
+
+main {
+    padding: 4rem;
+    height: 100%;
+
+    .icons {
+        margin-top: 1rem;
+
+        a {
+            padding: 0.4rem;
+                // hover zorg dat de kleur van de social media 
+                // icons vernader als we met de muis over gaan
+            &:hover {
+                color: $secondary-color;
+                @include easeOut();
+            }
+        }
+    }
+    &#home {
+        // no scroll bar on de home page
+        overflow: hidden;
+        h1 {
+            margin-top: 20vh;
+        }
+    }   
+}
+
+
