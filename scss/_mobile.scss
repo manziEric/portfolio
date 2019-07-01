@@ -2,7 +2,7 @@
 
 @include mediaXl {
     .projects {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -62,7 +62,16 @@
       grid-template-columns: 1fr; 
     }
     .projects {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+      
+      'job11'
+      'job22'
+      'job33'
+      'job44'
+      'job55'
+      'job66';
+
+      grid-template-columns: 1fr; 
     }
 }
 

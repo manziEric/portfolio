@@ -30,12 +30,10 @@ h1, h2, h3{
     &.sm-heading{
         margin-bottom: 2rem;
         padding: 0.2rem 1rem;
-        background: rgba(lighten($primary-color,5), 0.5);
+        // background: rgba(lighten($primary-color,5), 0.5);
     }
 }
-// h1.lg-heading{
-// 1: is gelijk aan nested. dit is bij normal css
-// }
+
 
 a{
     color: #fff;
@@ -86,10 +84,11 @@ main {
    display: grid;
    grid-gap: 30px;
    grid-template-areas:
-   'bioimage bio bio'
-   'job1 job2 job3';
-   grid-template-columns: repeat(3, 1fr);
+   'bioimage bio'
+   'job1 job2';
+   grid-template-columns: repeat(2, 1fr);
 
+   
    .bio-image {
     grid-area: bioimage;
     margin: auto;
@@ -123,21 +122,43 @@ main {
 
 // work/projects
 
-// @mixin grid($cols, $mgn) {
-//     float: left;
-//     margin-right: $mgn;
-//     margin-bottom: $mgn;
-//     width: ((100% - (($cols - 1) * $mgn)) / $cols);
-//     &:nth-child(#{$cols}n){
-//         margin-right: 0;
-//     }
-// }
-
 .projects {
-    // @include grid (4, 2%);
+    
     display: grid;
-    grid-gap: 0.7rem;
+    grid-gap: 30px;
+    grid-template-areas:
+    'job11 job22 job33'
+    'job44 job55 job66';
     grid-template-columns: repeat(3, 1fr);
+ 
+    
+ .job-11 {
+     grid-area: job11;
+ }
+ 
+ .job-22 {
+     grid-area: job22;
+ }
+ .job-33 {
+    grid-area: job33;
+}
+
+.job-44 {
+    grid-area: job44;
+}
+.job-55 {
+    grid-area: job55;
+}
+
+.job-66 {
+    grid-area: job66;
+}
+
+ .job10 {
+     background: lighten($primary-color, 5);
+     padding: 0.5rem;
+     border-bottom: $secondary-color 5px solid;
+ }
 
     img {
         width: 100%;
@@ -158,6 +179,7 @@ main {
     justify-content: space-evenly;
     align-items: center;
     margin-top: 1rem;
+    overflow: hidden;
 
     div{
         font-size: 2rem;
