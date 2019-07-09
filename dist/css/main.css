@@ -206,6 +206,21 @@ main {
       border-color: #eece1a;
       transition: all 0.5s ease-out; }
 
+.futur {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas: 'job110';
+  grid-template-columns: repeat(1, 1fr); }
+  .futur .job-110 {
+    grid-area: job11; }
+  .futur img {
+    width: 100%;
+    border: 3px #fff solid; }
+    .futur img:hover {
+      opacity: 0.5;
+      border-color: #eece1a;
+      transition: all 0.5s ease-out; }
+
 .boxes {
   display: flex;
   flex-wrap: wrap;
@@ -288,6 +303,9 @@ main {
     grid-template-columns: 1fr; }
   .projects {
     grid-template-areas: 'job11' 'job22' 'job33' 'job44' 'job55' 'job66';
+    grid-template-columns: 1fr; }
+  .futur {
+    grid-template-areas: 'job11';
     grid-template-columns: 1fr; } }
 
 @media screen and (max-width: 500px) {
