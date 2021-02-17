@@ -1,257 +1,250 @@
-@import 'config';
-@import 'menu';
-
+@import "config";
+@import "menu";
 
 // * selecting every thing in css
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-body{
-    @include background;
-    background: $primary-color;
-    color: set-text-color($primary-color);
-    height: 100%;
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.5;
+body {
+  @include background;
+  background: $primary-color;
+  color: set-text-color($primary-color);
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
 }
 
 // Headings
 
-h1, h2, h3{
-    margin: 0;
-    font-weight: 400;
-    // is gelijk aan 1: dit is nested bij sass
-    &.lg-heading{
-        // 1rem is normaal standaard bij html, 1rem == 16px
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+  // is gelijk aan 1: dit is nested bij sass
+  &.lg-heading {
+    // 1rem is normaal standaard bij html, 1rem == 16px
     font-size: 6rem;
-    }
-    &.sm-heading{
-        margin-bottom: 2rem;
-        padding: 0.2rem 1rem;
-        // background: rgba(lighten($primary-color,5), 0.5);
-    }
+  }
+  &.sm-heading {
+    margin-bottom: 2rem;
+    padding: 0.2rem 1rem;
+    // background: rgba(lighten($primary-color,5), 0.5);
+  }
 }
 
-
-a{
-    color: #fff;
-    text-decoration: none;
+a {
+  color: #fff;
+  text-decoration: none;
 }
 
-header{
-    // maakt de 3 menu streepjes 
-    // vast zo dat we scrollen en deze me gaan naar beneden
-    position: fixed;
-    z-index: 2;
-    width: 100%;
+header {
+  // maakt de 3 menu streepjes
+  // vast zo dat we scrollen en deze me gaan naar beneden
+  position: fixed;
+  z-index: 2;
+  width: 100%;
 }
 
-.text-secondary{
-    color: $secondary-color;
+.text-secondary {
+  color: $secondary-color;
 }
 
 main {
-    padding: 4rem;
-    // creating stiky footer. this go in the element befor footer
-    min-height: calc(100vh - 60px);
+  padding: 4rem;
+  // creating stiky footer. this go in the element befor footer
+  min-height: calc(100vh - 60px);
 
+  .icons {
+    margin-top: 1rem;
 
-    .icons {
-        margin-top: 1rem;
-
-        a {
-            padding: 0.4rem;
-                // hover zorg dat de kleur van de social media 
-                // icons vernader als we met de muis over gaan
-            &:hover {
-                color: $secondary-color;
-                @include easeOut();
-            }
-        }
+    a {
+      padding: 0.4rem;
+      // hover zorg dat de kleur van de social media
+      // icons vernader als we met de muis over gaan
+      &:hover {
+        color: $secondary-color;
+        @include easeOut();
+      }
     }
-    &#home {
-        // no scroll bar on de home page
-        overflow: hidden;
-        h1 {
-            margin-top: 20vh;
-        }
-    }   
+  }
+  &#home {
+    // no scroll bar on de home page
+    overflow: hidden;
+    h1 {
+      margin-top: 20vh;
+    }
+  }
 }
 
 .about-info {
-   display: grid;
-   grid-gap: 30px;
-   grid-template-areas:
-   'bioimage bio'
-   'job1 job2';
-   grid-template-columns: repeat(2, 1fr);
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas:
+    "bioimage bio"
+    "job1 job2";
+  grid-template-columns: repeat(2, 1fr);
 
-   
-   .bio-image {
+  .bio-image {
     grid-area: bioimage;
     margin: auto;
     border-radius: 50%;
     border: $secondary-color 3px solid;
-}
+  }
 
-.bio {
+  .bio {
     grid-area: bio;
     font-size: 1.5rem;
-}
+  }
 
-.job-1 {
+  .job-1 {
     grid-area: job1;
-}
+  }
 
-.job-2 {
+  .job-2 {
     grid-area: job2;
-}
+  }
 
-.job-3 {
+  .job-3 {
     grid-area: job3;
-}
+  }
 
-.job {
+  .job {
     background: lighten($primary-color, 5);
     padding: 0.5rem;
     border-bottom: $secondary-color 5px solid;
-}
+  }
 }
 
 // work/projects
 
 .projects {
-    
-    display: grid;
-    grid-gap: 30px;
-    grid-template-areas:
-    'job11 job22 job33'
-    'job44 job55 job66';
-    grid-template-columns: repeat(3, 1fr);
- 
-    
- .job-11 {
-     grid-area: job11;
- }
- 
- .job-22 {
-     grid-area: job22;
- }
- .job-33 {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas:
+    "job11 job22 job33"
+    "job44 job55 job66";
+  grid-template-columns: repeat(3, 1fr);
+
+  .job-11 {
+    grid-area: job11;
+  }
+
+  .job-22 {
+    grid-area: job22;
+  }
+  .job-33 {
     grid-area: job33;
-}
+  }
 
-.job-44 {
+  .job-44 {
     grid-area: job44;
-}
-.job-55 {
+  }
+  .job-55 {
     grid-area: job55;
-}
+  }
 
-.job-66 {
+  .job-66 {
     grid-area: job66;
-}
+  }
 
- .job10 {
-     background: lighten($primary-color, 5);
-     padding: 0.5rem;
-     border-bottom: $secondary-color 5px solid;
- }
+  .job10 {
+    background: lighten($primary-color, 5);
+    padding: 0.5rem;
+    border-bottom: $secondary-color 5px solid;
+  }
 
-    img {
-        width: 100%;
-        border: 3px #fff solid;
+  img {
+    width: 100%;
+    border: 3px #fff solid;
 
-        &:hover {
-            opacity: 0.5;
-            border-color: $secondary-color;
-            @include easeOut;
-        }
+    &:hover {
+      opacity: 0.5;
+      border-color: $secondary-color;
+      @include easeOut;
     }
+  }
 }
 
 .futur {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas: "job110";
+  grid-template-columns: repeat(1, 1fr);
 
-    display: grid;
-    grid-gap: 30px;
-    grid-template-areas:
-    'job110';
-    grid-template-columns: repeat(1, 1fr);
+  .job-110 {
+    grid-area: job11;
+  }
 
-    .job-110 {
-        grid-area: job11;
+  img {
+    width: 100%;
+    border: 3px #fff solid;
+
+    &:hover {
+      opacity: 0.5;
+      border-color: $secondary-color;
+      @include easeOut;
     }
-    
-    img {
-        width: 100%;
-        border: 3px #fff solid;
-
-        &:hover {
-            opacity: 0.5;
-            border-color: $secondary-color;
-            @include easeOut;
-        }
-    }
+  }
 }
 
-//Contact Page 
+//Contact Page
 .boxes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 1rem;
-    overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem;
+  overflow: hidden;
 
-    div{
-        font-size: 2rem;
-        border: 3px #fff solid;
-        padding: 1.5rem 2.5rem;
-        margin-bottom: 3rem;
+  div {
+    font-size: 2rem;
+    border: 3px #fff solid;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
 
-        @include easeOut;
+    @include easeOut;
 
-        &:hover {
-            padding: 0.5rem 1.5rem;
-            background: $secondary-color;
-            color: set-text-color($secondary-color);
-            span {
-                color: set-text-color($secondary-color);
-            }
-        }
+    &:hover {
+      padding: 0.5rem 1.5rem;
+      background: $secondary-color;
+      color: set-text-color($secondary-color);
+      span {
+        color: set-text-color($secondary-color);
+      }
     }
-
+  }
 }
 
 // button style
 .btn {
-    display: block;
-    padding: 0.5rem 1rem;
-    border: 0;
-    margin-bottom: 0.3rem;
-    &:hover {
-        background: $secondary-color;
-        color: set-text-color($secondary-color);
-    }
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+  &:hover {
+    background: $secondary-color;
+    color: set-text-color($secondary-color);
+  }
 }
 .btn-dark {
-@extend .btn;
-background: darken($primary-color, 50);
-color: #fff;
+  @extend .btn;
+  background: darken($primary-color, 50);
+  color: #fff;
 }
 
 .btn-light {
-    @extend .btn;
-    background: lighten($primary-color, 50);
-color: #fff;
+  @extend .btn;
+  background: lighten($primary-color, 50);
+  color: #fff;
 }
 
 #main-footer {
-    text-align: center;
-    padding: 1rem;
-    background: darken($primary-color, 0);
-    height: 60px;
+  text-align: center;
+  padding: 1rem;
+  background: darken($primary-color, 0);
+  height: 60px;
 }
-@import 'mobile';
+@import "mobile";
