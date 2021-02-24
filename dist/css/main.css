@@ -145,6 +145,17 @@ body#bg-img {
   background: rgba(51, 51, 51, 0.3);
 } */
 
+.job {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "job-skill" "job-lang";
+}
+
+ul {
+  list-style-type: none;
+}
+
 h1,
 h2,
 h3 {
@@ -356,9 +367,18 @@ main#home h1 {
   height: 60px;
 }
 
+@media screen and (min-width: 769px) {
+  p {
+    min-height: 170px;
+  }
+}
+
 @media screen and (min-width: 1171px) {
   .projects {
     grid-template-columns: repeat(3, 1fr);
+  }
+  p {
+    min-height: 130px;
   }
 }
 
